@@ -1,15 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <PackageId>AzureExtensions.Swashbuckle</PackageId>
+    <PackageId>AzureExtensions.Swashbuckle.Newtonsoft</PackageId>
     <Authors>vitalybibikov</Authors>
-    <Description>Swagger and Swagger UI in Azure Functions by Swashbuckle</Description>
+    <Description>Swagger and Swagger UI in Azure Functions by Swashbuckle with Newtonsoft</Description>
     <AssemblyName>AzureFunctions.Extensions.Swashbuckle</AssemblyName>
     <Version>3.3.1-beta</Version>
     <RootNamespace>AzureFunctions.Extensions.Swashbuckle</RootNamespace>
-    <Copyright>vitalybibikov</Copyright>
-    <PackageProjectUrl>https://github.com/vitalybibikov/azure-functions-extensions-swashbuckle</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/vitalybibikov/azure-functions-extensions-swashbuckle</RepositoryUrl>
+    <Copyright>Ivan Filatov</Copyright>
+    <PackageProjectUrl>https://github.com/Saikava/AzureExtensions.Swashbuckle</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Saikava/AzureExtensions.Swashbuckle</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>Swagger Swashbuckle AzureFunctions webjobs extensions</PackageTags>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -48,6 +48,7 @@
 
   <PropertyGroup>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Product>AzureFunctions.Extensions.Swashbuckle.Newtonsoft</Product>
   </PropertyGroup>
 
 </Project>
