@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using System.Threading;
 using AzureFunctions.Extensions.Swashbuckle.Attribute;
 using AzureFunctions.Extensions.Swashbuckle.Settings;
 using Microsoft.AspNetCore.Http;
@@ -18,6 +19,7 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using ExecutionContext = Microsoft.Azure.WebJobs.ExecutionContext;
 
 namespace AzureFunctions.Extensions.Swashbuckle.SwashBuckle.Providers
 {
@@ -349,6 +351,7 @@ namespace AzureFunctions.Extensions.Swashbuckle.SwashBuckle.Providers
             if (parameter.ParameterType.Name == "TraceWriter") return true;
             if (parameter.ParameterType == typeof(ExecutionContext)) return true;
             if (parameter.ParameterType == typeof(ILogger)) return true;
+            if (parameter.ParameterType == typeof(CancellationToken)) return true;
             if (parameter.ParameterType.IsAssignableFrom(typeof(ILogger))) return true;
             if (parameter.ParameterType.IsAssignableFrom(typeof(ISwashBuckleClient))) return true;
             if (parameter.GetCustomAttributes().Any(attr => attr is HttpTriggerAttribute)
