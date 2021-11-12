@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -156,6 +156,8 @@ namespace AzureFunctions.Extensions.Swashbuckle.SwashBuckle
                 _swaggerOptions.ConfigureSwaggerGen?.Invoke(options);
             });
 
+            services.AddSwaggerGenNewtonsoftSupport();
+
             _serviceProvider = services.BuildServiceProvider(true);
         }
 
@@ -224,7 +226,8 @@ namespace AzureFunctions.Extensions.Swashbuckle.SwashBuckle
             {
                 Title = document.Title,
                 Version = document.Version,
-                Description = document.Description
+                Description = document.Description,
+                Extensions = document.Extensions
             });
         }
         private static Assembly GetAssembly()
